@@ -18,6 +18,11 @@ db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
 db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
+// Middleware
+app.use(express.urlencoded({extended: true}));
+
+// Routes/ Controllers
+app.use('/users', require('./controllers/users'));
 
 
 
