@@ -24,7 +24,8 @@ app.use(express.urlencoded({extended: true}));
 // Routes/ Controllers
 app.use('/users', require('./controllers/users'));
 
-
+// Home Route
+app.get('/',  (req, res) => res.render('index'));
 
 // Listener
 const PORT = process.env.PORT;
