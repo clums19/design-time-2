@@ -5,6 +5,9 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const session =  require('express-session');
 
+// Set default view engine
+app.set('view engine', 'ejs');
+
 // Database Config
 mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
