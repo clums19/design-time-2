@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
+const session =  require('express-session');
 
 // Database Config
 mongoose.connect(process.env.DATABASE_URL, {
@@ -20,9 +21,15 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 // Middleware
 app.use(express.urlencoded({extended: true}));
+app.use(session({
+	secret: process.env.SECRET,
+	resave: false,
+	saveUninitialized: false
+}));
 
 // Routes/ Controllers
 app.use('/users', require('./controllers/users'));
+app.use('/sessions', require('./controllers/sessions'));
 
 // Home Route
 app.get('/',  (req, res) => res.render('index'));
