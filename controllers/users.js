@@ -7,7 +7,11 @@ const User = require('../models/user');
 // Index
 
 // New
-
+userRouter.get('/new', (req, res) => {
+    res.render('users/new.ejs', {
+        currentUser: req.session.currentUser
+    });
+});
 // Delete
 
 // Update

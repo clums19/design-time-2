@@ -35,7 +35,9 @@ app.use('/users', require('./controllers/users'));
 app.use('/sessions', require('./controllers/sessions'));
 
 // Home Route
-app.get('/',  (req, res) => res.render('index'));
+app.get('/',  (req, res) => res.render('index', {
+	currentUser: req.session.currentUser
+}));
 
 // Listener
 const PORT = process.env.PORT;
