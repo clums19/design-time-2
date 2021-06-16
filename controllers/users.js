@@ -5,10 +5,15 @@ const userRouter = express.Router();
 const User = require('../models/user');
 
 // Index
-
+// userRouter.get('/', (req, res) => {
+//     if(!req.session.currentUser) return 
+//     res.redirect('/');
+//     res.render('/users/index', {
+//         currentUser: req.session.currentUser})
+// });
 // New
 userRouter.get('/new', (req, res) => {
-    res.render('users/new.ejs', {
+    res.render('users/new', {
         currentUser: req.session.currentUser
     });
 });
