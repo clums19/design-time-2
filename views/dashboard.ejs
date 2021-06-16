@@ -7,7 +7,22 @@
     <title>Design Time</title>
 </head>
 <body>
-    <%- include('./partials/nav.ejs') %> 
-    <h1>Dashboard</h1>
+    <header>
+        <%- include('./partials/nav.ejs') %> 
+        <h1>Dashboard</h1>
+    </header>
+    <main>
+        <ul>
+        <% blogs.forEach(blog => { %>
+                <li>
+                    <a href="<%= blog._id %>"><img class="blogImg" src="<%=blog.img%>"/></a>
+                </li>
+           <% console.log(blog._id) %> 
+            
+        <% }) %> 
+        </ul>
+        <h2><%=  %> </h2>
+    </main>
+
 </body>
 </html>

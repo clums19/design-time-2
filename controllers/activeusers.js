@@ -1,14 +1,28 @@
 const express = require('express');
-const usersRouter = express.Router();
-const User = require('../models/user');
-const bcrypt = require('bcrypt');
+const activeUsersRouter = express.Router();
+const Blog = require('../models/activeuser');
 
+// Seed
+const blogSeed = require('../models/blogSeed');
+
+activeUsersRouter.get('/seed', (req, res) => {
+    Blog.deleteMany({}, (error, allBlogs) => {});
+    Blog.create(blogSeed, (error, data) => {
+        res.redirect('/');
+    });
+});
 
 // Index
-usersRouter.get('/', (req, res) => {
+activeUsersRouter.get('/', (req, res) => {
     if(req.session.currentUser) {
-        res.render('activeusers/index', {currentUser: req.session.currentUser});
-    } else {res.render('users/new', {currentUser: req.session.currentUser});};
+        Blog.find({}, (error, allBlogs) => {
+        res.render('activeusers/index', {
+        blogs: allBlogs,
+        currentUser: req.session.currentUser
+        });
+    });
+    } else {res.render('users/new', {currentUser: req.session.currentUser});
+    };
 });
 
 // New
@@ -25,4 +39,4 @@ usersRouter.get('/', (req, res) => {
 
 
 // Export
-module.exports = usersRouter;
+module.exports = activeUsersRouter;

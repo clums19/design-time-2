@@ -5,6 +5,7 @@ Have you wanted to show off your Carnival Costume Design but didn't know how? We
 ## Technologies
 - MongoDB
 - Express
+- Node.js
 - JavaScript
 - HTML
 - CSS
