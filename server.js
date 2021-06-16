@@ -33,6 +33,7 @@ app.use(session({
 
 // Routes/ Controllers
 app.use(methodOverride('_method'));
+app.use('/activeusers', require('./controllers/activeusers'));
 app.use('/users', require('./controllers/users'));
 app.use('/sessions', require('./controllers/sessions'));
 
