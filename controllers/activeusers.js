@@ -28,12 +28,25 @@ activeUsersRouter.get('/', (req, res) => {
 });
 
 // New
-
+activeUsersRouter.get('/new', (req, res) => {
+    res.render('activeusers/new')
+});
 // Delete
 
 // Update
-
+// tattooRouter.put('/:id', (req, res) => {
+//     Tattoo.findByIdAndUpdate(req.params.id, req.body, {
+//         new: true
+//     }, (error, updateTattoo) => {
+//         res.redirect(`/tattoos/${req.params.id}`);
+//     });
+// });
 // Create
+activeUsersRouter.post('/', (req, res) => {
+    Blog.create(req.body, (error, createdTattoo) => {
+        res.redirect('activeusers');
+    });
+});
 
 // Edit
 

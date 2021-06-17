@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>Create a New Post</title>
 </head>
 <body>
     <header>
         <nav>
             <a href="/">Home</a>
             <a href="/activeusers">My Profile</a>
-            <a href="/activeusers/new">Create a new Post</a>
             <form action="/sessions?_method=DELETE" method="POST">
                 <input type="submit" value="Log Out" />
             </form> 
         </nav>
-        <h1>My Profile</h1>
+        <h2>Create a New Post</h2>
     </header>
-    <main>
-        <h2></h2>
-    </main>
-    <footer>
-        <a href="">Edit Profile</a>
-    </footer>
+    <form class="addBlog" action="/activeusers" method="POST">
+        Name: <input type="text" name="name"/><br/>
+        Description: <input type="text" name="biography"/><br/>
+        Image: <input type="text" name="img"/><br/>
+        <input type="submit" value="Post Blog"/><br/>
+    </form>
 </body>
 </html>
