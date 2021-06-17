@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Post</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/activeusers">My Profile</a>
+            <form action="/sessions?_method=DELETE" method="POST">
+                <input type="submit" value="Log Out" />
+            </form> 
+        </nav>
+        <h2>Edit <%= blog.name %> </h2>
+    </header>
+    <form class="addBlog" action="/activeusers/<%= blog._id %>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%= blog.name %>"/><br/>
+        Description: <input type="text" name="biography" value="<%= blog.biography %>"/><br/>
+        Image: <input type="text" name="img" value="<%= blog.img %>"/><br/>
+        <input type="submit" value="Edit Blog"/><br/>
+    </form>
+</body>
+</html>

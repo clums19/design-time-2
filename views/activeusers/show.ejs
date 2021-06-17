@@ -19,11 +19,16 @@
         <h2><%= blog.name %></h2>
     </header>
     <div class="blogEntry">
+        <a href="/activeusers/<%= blog._id %>/edit">Edit Post</a>
         <ul style="list-style-type: none;">
         <li><img src="<%= blog.img %>"/></li><br/>
         <li><%= blog.biography %> </li><br/>
         </ul>
     </div>
-  
+    <footer>
+        <form class="deleteBtn" action="/activeusers/<%= blog._id %>/?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE POST"/>
+        </form>
+    </footer>
 </body>
 </html>
