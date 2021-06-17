@@ -23,12 +23,6 @@ activeUsersRouter.get('/', (req, res) => {
         currentUser: req.session.currentUser
         });
     });
-        User.findById({}, (error, allUsers) => {
-        res.render('activeusers/index', {
-        users: allUsers,
-        currentUser: req.session.currentUser
-        });
-    });
     } else {res.render('users/new', {currentUser: req.session.currentUser});
     };
 });
@@ -44,7 +38,15 @@ activeUsersRouter.get('/', (req, res) => {
 // Edit
 
 // Show
-
+activeUsersRouter.get('/:id', (req, res) => {
+    if (req.session.currentUser) {
+        Blog.findById(req.params.id, (err, foundBlog) => {
+            res.render('activeusers/show', {
+                blog: foundBlog,
+            });
+        });
+    } else {res.render('users/new', {currentUser: req.session.currentUser})};
+});
 
 // Export
 module.exports = activeUsersRouter;
