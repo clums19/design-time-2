@@ -12,15 +12,14 @@
         <h1>Dashboard</h1>
     </header>
     <main>
-        <ul>
+        <div>
         <% blogs.forEach(blog => { %>
-                <li>
+                <h2><%= blog.name %></h2>
+                <div>
                     <a href="<%= blog._id %>"><img class="blogImg" src="<%=blog.img%>"/></a>
-                </li>
-           <% console.log(blog._id) %> 
-            
+                </div> 
         <% }) %> 
-        </ul>
+            </div>
         <h2><%=  %> </h2>
     </main>
 

@@ -1,6 +1,8 @@
 const express = require('express');
 const activeUsersRouter = express.Router();
 const Blog = require('../models/activeuser');
+const User = require('../models/user');
+
 
 // Seed
 const blogSeed = require('../models/blogSeed');
@@ -18,6 +20,12 @@ activeUsersRouter.get('/', (req, res) => {
         Blog.find({}, (error, allBlogs) => {
         res.render('activeusers/index', {
         blogs: allBlogs,
+        currentUser: req.session.currentUser
+        });
+    });
+        User.findById({}, (error, allUsers) => {
+        res.render('activeusers/index', {
+        users: allUsers,
         currentUser: req.session.currentUser
         });
     });

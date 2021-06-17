@@ -5,11 +5,20 @@ const userRouter = express.Router();
 const User = require('../models/user');
 
 // Index
-// userRouter.get('/', (req, res) => {
-//     if(!req.session.currentUser) return 
-//     res.redirect('/');
-//     res.render('/users/index', {
-//         currentUser: req.session.currentUser})
+userRouter.get('/', (req, res) => {
+    User.findById({}, (error, allUsers) => {
+        res.render('/activeusers/index', {
+            users: allUsers,
+            currentUser: req.session.currentUser
+        })
+    })
+})
+// if(req.session.currentUser) {
+//     Blog.find({}, (error, allBlogs) => {
+//     res.render('activeusers/index', {
+//     blogs: allBlogs,
+//     currentUser: req.session.currentUser
+//     });
 // });
 // New
 userRouter.get('/new', (req, res) => {
