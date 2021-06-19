@@ -15,22 +15,12 @@ const User = require('../models/user');
 // });
 
 // Index
-profilesRouter.get('/', (req, res) => {
-    if(req.session.currentUser) {
-        Blogs.find({createdBy: req.session.currentUser}, (error, allProfiles) => {
-        res.render('profiles', {
-        profiles: allProfiles,
-        currentUser: req.session.currentUser
-        });
-    });
-    } else {res.render('users/new', {currentUser: req.session.currentUser});
-    };
-});
+
 // New
 profilesRouter.get('/new', (req, res) => {
     if(req.session.currentUser) {
         res.render('profiles/new')
-    } else {res.render('users/new', {currentUser: req.session.currentUser});};
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser});};
 });
 
 
@@ -40,7 +30,7 @@ profilesRouter.post('/', (req, res) => {
     Blogs.create(req.body, (error, createdBlogs) => {
         res.redirect('profiles');
     });
-} else {res.render('users/new', {currentUser: req.session.currentUser});};
+} else {res.render('sessions/new', {currentUser: req.session.currentUser});};
 
 });
 // Exports

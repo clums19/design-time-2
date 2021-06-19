@@ -21,7 +21,7 @@ activeUsersRouter.delete('/:id', (req, res) => {
     Blog.findByIdAndDelete(req.params.id, (error, deletedBlog) => {
         res.redirect('/profiles');
     });
-    } else {res.render('users/new', {currentUser: req.session.currentUser})};
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 });
 // Update
 activeUsersRouter.put('/:id', (req, res) => {
@@ -31,7 +31,7 @@ activeUsersRouter.put('/:id', (req, res) => {
     }, (error, updateBlog) => {
         res.redirect(`/activeusers/${req.params.id}`);
     });
-    } else {res.render('users/new', {currentUser: req.session.currentUser})};
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 
 });
 
@@ -44,7 +44,7 @@ activeUsersRouter.get('/:id/edit', (req, res) => {
             blog: foundBlog,
         });
     });
-    } else {res.render('users/new', {currentUser: req.session.currentUser})};
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 
 })
 // Show
@@ -55,7 +55,7 @@ activeUsersRouter.get('/:id', (req, res) => {
                 blog: foundBlog,
             });
         });
-    } else {res.render('users/new', {currentUser: req.session.currentUser})};
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 });
 
 // Export
