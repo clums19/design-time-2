@@ -7,15 +7,16 @@ const User = require('../models/user');
 // // Index
 userRouter.get('/', (req, res) => {
     if(req.session.currentUser) {
-        User.find({createdBy: req.session.currentUser}, (error, allUsers) => {
+        User.find({}, (error, allUsers) => {
         res.render('users', {
-        user: allUsers,
+        users: allUsers,
         currentUser: req.session.currentUser
         });
     });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser});
     };
 });
+
 // New
 userRouter.get('/new', (req, res) => {
     res.render('users/new', {
@@ -37,7 +38,7 @@ userRouter.post('/', (req, res) => {
 userRouter.get('/:id/edit', (req, res) => {
     if (req.session.currentUser) {
     User.findById(req.params.id, (error, foundUser) => {
-        res.render('uesrs/edit', {
+        res.render('users/edit', {
             user: foundUser,
             currentUser: req.session.currentUser
         });

@@ -7,7 +7,7 @@ const blogSchema = new Schema({
     img: {type: String, required: true},
     createdBy: {
         type: Schema.Types.ObjectId,
-        ref: 'Blog'
+        ref: 'User'
     }
 }, {timestamps: true});
 

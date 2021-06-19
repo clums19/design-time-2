@@ -9,15 +9,12 @@
 <body>
     <header>
         <%- include('../partials/nav.ejs') %> 
-        <h1>My Profile</h1>
     </header>
     <main>
-        <form> 
-        
-        </form>
+        <% users.forEach(user => { %>
+            <h1><a href="/users/show"><%= user.username %></a></h1>
+        <% }) %>
     </main>
-    <footer>
-        <a class="editProfile" href="/users/<%= user._id %>/edit">Edit Profile</a>
-    </footer>
+        
 </body>
 </html>

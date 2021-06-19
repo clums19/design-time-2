@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const session =  require('express-session');
 const methodOverride = require('method-override');
 const Blog = require('./models/activeuser');
+const User = require('./models/user');
 const usersRouter = express.Router();
 
 
@@ -40,7 +41,6 @@ app.use(methodOverride('_method'));
 app.use('/activeusers', require('./controllers/activeusers'));
 app.use('/users', require('./controllers/users'));
 app.use('/sessions', require('./controllers/sessions'));
-app.use('/profiles', require('./controllers/profiles'));
 
 
 

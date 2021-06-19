@@ -19,7 +19,7 @@ activeUsersRouter.get('/seed', (req, res) => {
 activeUsersRouter.delete('/:id', (req, res) => {
     if (req.session.currentUser) {
     Blog.findByIdAndDelete(req.params.id, (error, deletedBlog) => {
-        res.redirect('/profiles');
+        res.redirect('/users');
     });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 });
