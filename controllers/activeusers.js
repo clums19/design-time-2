@@ -14,28 +14,12 @@ activeUsersRouter.get('/seed', (req, res) => {
     });
 });
 
-// Index
-activeUsersRouter.get('/', (req, res) => {
-    if(req.session.currentUser) {
-        Blog.find({}, (error, allBlogs) => {
-        res.render('activeusers/index', {
-        blogs: allBlogs,
-        currentUser: req.session.currentUser
-        });
-    });
-    } else {res.render('users/new', {currentUser: req.session.currentUser});
-    };
-});
 
-// New
-activeUsersRouter.get('/new', (req, res) => {
-    res.render('activeusers/new')
-});
 // Delete
 activeUsersRouter.delete('/:id', (req, res) => {
     if (req.session.currentUser) {
     Blog.findByIdAndDelete(req.params.id, (error, deletedBlog) => {
-        res.redirect('activeusers');
+        res.redirect('/profiles');
     });
     } else {res.render('users/new', {currentUser: req.session.currentUser})};
 });
@@ -50,12 +34,7 @@ activeUsersRouter.put('/:id', (req, res) => {
     } else {res.render('users/new', {currentUser: req.session.currentUser})};
 
 });
-// Create
-activeUsersRouter.post('/', (req, res) => {
-    Blog.create(req.body, (error, createdTattoo) => {
-        res.redirect('activeusers');
-    });
-});
+
 
 // Edit
 activeUsersRouter.get('/:id/edit', (req, res) => {
