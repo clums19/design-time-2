@@ -15,7 +15,7 @@
                 <input type="submit" value="Log Out" />
             </form> 
         </nav>
-        <h2><%= blog.name %></h2>
+        <h2><%= blog.name %> created by <%=blog.createdBy%></h2>
     </header>
     <div class="blogEntry">
         <a href="/activeusers/<%= blog._id %>/edit">Edit Post</a>

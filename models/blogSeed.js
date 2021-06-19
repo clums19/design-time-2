@@ -2,14 +2,17 @@ module.exports = [
     {
     name: 'Under the Sea',
     biography: 'Under the Sea was insipred by the mysterious mermaids and how they and the most unknown yet beautiful creatures in the sea.',
-    img: 'https://i.imgur.com/acveNWf.jpg'
+    img: 'https://i.imgur.com/acveNWf.jpg',
+    createdBy: 'Mystery User 1'
 }, {
     name: 'Greek Goddesss',
     biography: 'Feeling like royalty is easy when you wear Greek Goddess. She has all of the most regal colors that shapes the body to perfection.',
-    img: 'https://i.imgur.com/7qrlssW.jpg'
+    img: 'https://i.imgur.com/7qrlssW.jpg',
+    createdBy: 'Mystery User 2'
 }, {
     name: 'Water Snake',
     biography: 'Sexy is an understatement. Snakes are always seen as the temptation but Water Snake will do more than just tempt you. It will also have you craving more.',
-    img: 'https://i.imgur.com/sRhglXJ.jpg'
+    img: 'https://i.imgur.com/sRhglXJ.jpg',
+    createdBy: 'Mystery User 3'
 }
 ]
