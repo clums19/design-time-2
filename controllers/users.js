@@ -26,6 +26,13 @@ userRouter.get('/new', (req, res) => {
 // Delete
 
 // Update
+userRouter.put('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    }, (error, updateUser) => {
+        res.redirect('/users/req.params.id');
+    });
+});
 
 // Create
 userRouter.post('/', (req, res) => {

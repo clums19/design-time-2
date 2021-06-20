@@ -13,7 +13,14 @@ activeUsersRouter.get('/seed', (req, res) => {
         res.redirect('/');
     });
 });
-
+// New
+activeUsersRouter.get('/new', (req, res) => {
+    if (req.session.currentUser) {
+    res.render('activeusers/new', {
+        currentUser: req.session.currentUser
+    });
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
+});
 
 // Delete
 activeUsersRouter.delete('/:id', (req, res) => {
