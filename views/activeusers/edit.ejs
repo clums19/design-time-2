@@ -7,13 +7,15 @@
 <body>
     <header>
         <%- include('../partials/nav.ejs') %> 
-        <h2>Edit <%= blog.name %> </h2>
     </header>
-    <form class="addBlog" action="/activeusers/<%= blog._id %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%= blog.name %>"/><br/>
-        Image: <input type="text" name="img" value="<%= blog.img %>"/><br/>
-        Description: <textarea name="biography"><%= blog.biography %></textarea><br/>
-        <input type="submit" value="Edit Blog"/><br/>
-    </form>
+    <h1>Edit <%= blog.name %> </h1>
+    <main>
+        <form class="addBlog" action="/activeusers/<%= blog._id %>?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value="<%= blog.name %>"/><br/>
+            Image: <input type="text" name="img" value="<%= blog.img %>"/><br/>
+            Description: <textarea name="biography"><%= blog.biography %></textarea><br/>
+            <input type="submit" value="Edit Blog"/><br/>
+        </form>
+    </main>
 </body>
 </html>

@@ -1,5 +1,10 @@
 body {
-    background-color: black;
+    background-image: url(./imgs/paper.jpeg);
     font-family: 'Open Sans', sans-serif;
     color: cornsilk;
+}
+header {
+    color: rgb(255, 255, 255);
+    background-color: rgba(202, 43, 226, 0.214);
+    text-align: right;
 }

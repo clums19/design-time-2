@@ -5,22 +5,26 @@
     <title></title>
 </head>
 <body>
-    <%- include('../partials/nav.ejs') %> 
+    <header>
+        <%- include('../partials/nav.ejs') %> 
+    </header>
     <h1>Design Time | Sign Up</h1>
-    <form action="/users" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email"/>
+    <main>
+        <form action="/users" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email"/>
 
-        <label for="username">Username:</label>
-        <input type="username" name="username" id="username"/>
+            <label for="username">Username:</label>
+            <input type="username" name="username" id="username"/>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password"/>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password"/>
 
-        <label for="biography">Biography:</label>
-        <input type="text" name="biography" id="biography"/>
+            <label for="biography">Biography:</label>
+            <input type="text" name="biography" id="biography"/>
 
-        <input type="submit" value="Sign Up">
-    </form>
+            <input type="submit" value="Sign Up">
+        </form>
+    </main>
 </body>
 </html>

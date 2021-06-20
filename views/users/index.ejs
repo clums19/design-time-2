@@ -8,8 +8,8 @@
     <header>
         <%- include('../partials/nav.ejs') %> 
     </header>
+    <h1><%= currentUser.username %></h1>
     <main>        
-            <h1><%= currentUser.username %></h1>
             <ul style="list-style-type: none;">
                 <li><%= currentUser.biography %> </li>
                 <li><a href="/users/<%= currentUser._id %>/edit">Edit Profile</a></li>
