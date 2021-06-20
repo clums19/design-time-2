@@ -37,6 +37,7 @@ app.use(session({
 }));
 
 // Routes/ Controllers
+app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 app.use('/activeusers', require('./controllers/activeusers'));
 app.use('/users', require('./controllers/users'));

@@ -49,6 +49,7 @@ activeUsersRouter.get('/:id/edit', (req, res) => {
     Blog.findById(req.params.id, (error, foundBlog) => {
         res.render('activeusers/edit', {
             blog: foundBlog,
+            currentUser: req.session.currentUser
         });
     });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
@@ -60,6 +61,7 @@ activeUsersRouter.get('/:id', (req, res) => {
         Blog.findById(req.params.id, (err, foundBlog) => {
             res.render('activeusers/show', {
                 blog: foundBlog,
+            currentUser: req.session.currentUser
             });
         });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
