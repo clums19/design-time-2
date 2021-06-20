@@ -13,6 +13,18 @@ activeUsersRouter.get('/seed', (req, res) => {
         res.redirect('/');
     });
 });
+// Index
+activeUsersRouter.get('/', (req, res) => {
+    if(req.session.currentUser) {
+        Blog.find({}, (error, foundBlog) => {
+        res.render('activeusers', {
+        blog: foundBlog,
+        currentUser: req.session.currentUser
+        });
+    });
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser});
+    };
+});
 // New
 activeUsersRouter.get('/new', (req, res) => {
     if (req.session.currentUser) {
@@ -41,7 +53,14 @@ activeUsersRouter.put('/:id', (req, res) => {
     } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 
 });
-
+// Create
+activeUsersRouter.post('/', (req, res) => {
+    if (req.session.currentUser) {
+    Blog.create(req.body, (error, createdTattoo) => {
+        res.redirect('/users');
+    });
+    } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
+});
 
 // Edit
 activeUsersRouter.get('/:id/edit', (req, res) => {
