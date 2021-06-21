@@ -38,7 +38,7 @@ activeUsersRouter.get('/new', (req, res) => {
 activeUsersRouter.delete('/:id', (req, res) => {
     if (req.session.currentUser) {
     Blog.findByIdAndDelete(req.params.id, (error, deletedBlog) => {
-        res.redirect('/users');
+        res.redirect('/');
     });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 });
@@ -57,7 +57,7 @@ activeUsersRouter.put('/:id', (req, res) => {
 activeUsersRouter.post('/', (req, res) => {
     if (req.session.currentUser) {
     Blog.create(req.body, (error, createdTattoo) => {
-        res.redirect('/users');
+        res.redirect('/');
     });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser})};
 });

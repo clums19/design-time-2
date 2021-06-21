@@ -1,3 +1,4 @@
+@import '~bootstrap/scss/boostrap';
 * {
     box-sizing: border-box;
 }
@@ -19,8 +20,11 @@ body {
 h1 {
     font-family: 'Dela Gothic One', cursive;
     font-size: 50px;
-    text-align: left;
+    text-align: center;
     background-color: rgba(202, 43, 226, 0.214);
+}
+h2 {
+    text-align: left;
 }
 header {
     color: rgb(255, 255, 255);
@@ -28,8 +32,26 @@ header {
     text-align: right;
     height: 50px;
 }
-img {
-    display: inline-block;
-    max-width: 350px;
-    float: none;
+.blogImg {
+    width: 33.33%;
+    float: left;
+    padding: 10px;
 }
+img {
+    width: 500px;
+}
+.carousel-item {
+    border-radius: 15px;
+    align-items: center;
+    max-width: 75%;
+    max-height: 75%;
+  }
+  
+  .carousel-item .active{
+    border-radius: 15px;
+    align-items: center;
+  }
+  
+  .carousel {
+    margin: 30px 30px 30px 30px;
+  }
