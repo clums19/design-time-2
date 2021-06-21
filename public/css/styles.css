@@ -17,6 +17,9 @@ body {
     margin:auto;
     text-align: center;
 }
+main {
+    text-align: center;
+}
 h1 {
     font-family: 'Dela Gothic One', cursive;
     font-size: 50px;
@@ -31,14 +34,27 @@ header {
     background-color: rgba(202, 43, 226, 0.214);
     text-align: right;
     height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+
 }
 .blogImg {
     width: 33.33%;
     float: left;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.rowImg {
+    content: "";
+    clear: both;
+    display: table;
 }
 img {
     width: 500px;
+    text-align: center;
+}
+.signUp {
+    display: table;
 }
 .carousel-item {
     border-radius: 15px;

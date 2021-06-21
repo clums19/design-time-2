@@ -10,21 +10,23 @@
     </header>
     <h1>Design Time | Sign Up</h1>
     <main>
+        <table>
         <form action="/users" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email"/>
+            <th><label for="email">Email:</label>
+            <input type="email" name="email" id="email"/></th>
 
-            <label for="username">Username:</label>
-            <input type="username" name="username" id="username"/>
+            <th><label for="username">Username:</label>
+            <input type="username" name="username" id="username"/></th>
 
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password"/>
+            <th><label for="password">Password:</label>
+            <input type="password" name="password" id="password"/></th>
 
-            <label for="biography">Biography:</label>
-            <input type="text" name="biography" id="biography"/>
+            <th><label for="biography">Biography:</label>
+            <textarea name="biography" id="biography"></textarea></th>
 
             <input type="submit" value="Sign Up">
         </form>
+        </table>
     </main>
 </body>
 </html>
