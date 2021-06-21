@@ -48,3 +48,4 @@ Have you wanted to show off your Carnival Costume Design but didn't know how? We
 ![Future Enhancements](./public/css/imgs/futuredt.png)
 - Single User Functionality
 - Profile Updates
+- Image Upload
