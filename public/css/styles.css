@@ -1,10 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+html { 
+    background: url(./imgs/paper.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 body {
-    background-image: url(./imgs/paper.jpeg);
-    font-family: 'Open Sans', sans-serif;
-    color: cornsilk;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(125, 34, 114);
+    max-width: 700px;
+    margin:auto;
+    text-align: center;
+}
+h1 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 50px;
+    text-align: left;
+    background-color: rgba(202, 43, 226, 0.214);
 }
 header {
     color: rgb(255, 255, 255);
     background-color: rgba(202, 43, 226, 0.214);
     text-align: right;
+    height: 50px;
+}
+img {
+    display: inline-block;
+    max-width: 350px;
+    float: none;
 }
