@@ -15,12 +15,24 @@
       </div>
     <span class="secondTitle">Create New Post</span>
     <main>
-      <div class="containerSign"> 
+      <div class="containerSign">  
         <form class="addBlog" action="/activeusers" method="POST">
-            * Name: <input type="text" name="name"/><br/>
-            * Image: <input type="text" name="img"/><br/>
-            * Description: <textarea type="text" name="biography"></textarea><br/>
-            <input type="submit" value="Create Post"/><br/>
+            <div class="labelEmail">
+              <label for="name">* Name:</label>
+              <input type="text" name="name"/>
+            </div>
+
+            <div class="labelEmail">
+              <label for="img">* Image URL:</label>
+              <input type="text" name="img"/>
+            </div>
+
+            <div class="labelEmail">
+              <label for="biography">* Description:</label>
+              <textarea type="text" name="biography"></textarea>
+            </div>
+
+            <input type="submit" value="Create Post"/>
         </form>
         <p>* = Required Field</p>
       </div>

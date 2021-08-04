@@ -81,6 +81,19 @@ main {
     -webkit-border-radius: 5px;
     border-radius: 5px; 
 }
+.editButton {
+  background: var(--green);
+  font-size: 25px;
+  color: black;
+  border: 0px;
+  display: flex;
+  justify-content: right;
+  border-radius: 5px;
+  /* margin: auto; */
+  /* margin-right: 100px; */
+  width: 12%;
+  font-family: 'Italiana', serif;
+}
 /* input {
   padding: 5px 25px;
   margin-right: 10px;
@@ -123,6 +136,8 @@ label {
 
 }
 .secondTitle {
+  display: flex;
+  justify-content: center;
   color:rgba(0, 0, 0, 0.7);
   font-size: 50px;
   background-color: transparent;
@@ -161,7 +176,15 @@ label {
 img {
     max-width: 375px;
     display: flex;
-    
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+
+}
+p {
+  display: flex;
+  width: 50%;
+  font-weight: 800;
 }
 /* .signUp {
     display: table;
