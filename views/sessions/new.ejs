@@ -5,21 +5,30 @@
     <title>Design Time| Sign In</title>
 </head>
 <body>
-    <header>
-    <%- include('../partials/nav.ejs') %> 
-    </header>
-    <h1>Login</h1>
+    <div class="container">
+        <span>
+            <a href="/"><img class="image-blur" src="/css/imgs/logo.png" alt="logo"></a>
+        </span>
+        <!-- <header>
+          <%- include('../partials/nav') %> 
+        </header> -->
+    </div>
     <main>
-        <form class="signUp" action='/sessions' method="POST">
-            <label for="email">* Email:</label>
-            <input type="email" name="email" id="email"/>
-
-            <label for="password">* Password:</label>
-            <input type="password" name="password" id="password"/>
-
-            <input type="submit" value="Login">
-        </form>
-        <p>* = Required Field</p>
+        <div class="containerSign">
+            <form class="signUp" action='/sessions' method="POST">
+                <div class="labelEmail">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email"/>
+                </div>
+                
+                <div class="labelEmail">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password"/>
+                </div>
+                
+                <input type="submit" value="Login">
+            </form>
+        </div>
     </main>
 </body>
 </html>

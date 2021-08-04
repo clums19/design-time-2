@@ -18,9 +18,12 @@ userRouter.get('/', (req, res) => {
 });
 
 // New
-userRouter.get('/new', (req, res) => {
+userRouter.get('/new', async (req, res) => {
     res.render('users/new', {
         currentUser: req.session.currentUser
+    })
+    .then((error) => {
+        res.redirect('sessions/new')
     });
 });
 // Delete

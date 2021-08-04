@@ -6,9 +6,8 @@ const mongoose = require('mongoose');
 const session =  require('express-session');
 const methodOverride = require('method-override');
 const Blog = require('./models/activeuser');
-const User = require('./models/user');
-const usersRouter = express.Router();
-
+// const User = require('./models/user');
+// const usersRouter = express.Router();
 
 
 // Set default view engine

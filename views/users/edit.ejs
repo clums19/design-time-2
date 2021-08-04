@@ -5,26 +5,33 @@
     <title>Edit Profile</title>
 </head>
 <body>
-    <header>
-         <%- include('../partials/nav.ejs') %> 
-    </header>
-    <h1><%= user.username %> | Edit Profile</h1>
+    <div class="container">
+        <span>
+          <a href="/"><img class="image-blur" src="/css/imgs/logo.png" alt="logo"></a>
+        </span>
+        <header>
+          <%- include('../partials/nav') %> 
+        </header>
+      </div>
+    <span class="secondTitle"><%= user.username %> | Edit Profile</span>
     <main>
-        <form action="/users" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" value="<%= user.email %>"/>
-
-            <label for="username">Username:</label>
-            <input type="username" name="username" id="username" value="<%= user.username %>"/>
-
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" value="<%= user.password %>"/>
-
-            <label for="biography">Biography:</label>
-            <input type="text" name="biography" id="biography" value="<%= user.biography %>"/>
-
-            <input type="submit" value="Edit Profile">
-        </form>
+      <div class="containerSign"> 
+            <form action="/users" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" value="<%= user.email %>"/>
+                
+                <label for="username">Username:</label>
+                <input type="username" name="username" id="username" value="<%= user.username %>"/>
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="<%= user.password %>"/>
+                
+                <label for="biography">Biography:</label>
+                <input type="text" name="biography" id="biography" value="<%= user.biography %>"/>
+                
+                <input type="submit" value="Edit Profile">
+            </form>
+        </div>
     </main>
 </body>
 </html>

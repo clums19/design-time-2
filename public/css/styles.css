@@ -1,35 +1,142 @@
-@import '~bootstrap/scss/boostrap';
+:root {
+  --green: #c7fdc9;
+  --black: #000000
+}
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 * {
     box-sizing: border-box;
 }
 html { 
-    background: url(./imgs/paper.jpeg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+    background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);  
+}
 body {
-    background-size: cover;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(125, 34, 114);
-    max-width: 700px;
-    margin:auto;
+    font-family: 'Italiana', serif;
+    /* color: rgb(205, 244, 206); */
+    /* border-color: green; */
+    /* background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);     */
+    /* margin:auto; */
+}
+/* main {
     text-align: center;
+} */
+.navBar {
+  /* padding: 10px; */
+  display: flex;
+  height: 200px;
+}
+.image-blur {
+  width: 300px;
+  height: 250px;
+  /* box-shadow: 0 0 16px 16px rgb(255, 255, 255) inset; */
+  -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+   top: 0;
+   z-index: 100;
+}
+.containerSign {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 300%; */
+  justify-content: space-around;
+  font-size: 30px;
+  /* padding: 0 10px; */
+  /* margin: 10%; */
 }
 main {
-    text-align: center;
+  display: flex;
+  justify-content: center;
 }
-h1 {
-    font-family: 'Dela Gothic One', cursive;
-    font-size: 50px;
-    text-align: center;
-    background-color: rgba(202, 43, 226, 0.214);
+.navBar ul {
+  list-style-type: none;
+  /* padding: 20px; */
+  justify-content: flex-end;
+  
+  list-style: none;
+  margin: 10px; 
 }
-h2 {
+.navBar a {
+  text-decoration: none;
+  /* margin: 10px; */
+  display: block;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  background: #c7fdc9;
+  margin-top: 0;
+  margin-bottom: 3px;
+  font-size: 25px;
+  cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+.navLogOut {
+    /* padding: 10px;  */
+    background:#c7fdc9; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+input {
+  padding: 5px 25px;
+  margin-right: 10px;
+  font-size: 35px;
+}
+input[type="submit"] {
+  width: 30%;
+  height: 30px;
+  background: var(--green);
+  font-size: 25px;
+  color: black;
+  border: 0px;
+  display: flex;
+  justify-content: right;
+  border-radius: 5px;
+  margin: auto;
+  margin-right: 0;
+  /* transition: 0.2s ease-in-out; */
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  background: var(--green);
+  /* box-shadow: 2px 2px var(--light-orange); */
+}
+/* input[type="password"] {
+  display: flex;
+  width: auto;
+} */
+label {
+  font-weight: 200;
+  display: flex;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 10px;
+  width: 175px;
+  justify-content: space-between;
+
+}
+.secondTitle {
+  color:rgba(0, 0, 0, 0.7);
+  font-size: 50px;
+  background-color: transparent;
+}
+.labelEmail {
+  display: flex;
+  padding: 10px;
+  /* width: 200px; */
+  /* flex-wrap: wrap; */
+  /* max-width: 100px; */
+  /* text-align: center; */
+}
+/* h2 {
     text-align: left;
-}
-header {
+} */
+/* header {
     color: rgb(255, 255, 255);
     background-color: rgba(202, 43, 226, 0.214);
     text-align: right;
@@ -37,37 +144,41 @@ header {
     font-size: 20px;
     font-weight: bold;
 
-}
-.blogImg {
+} */
+/* .blogImg {
     width: 33.33%;
     float: left;
     padding: 20px;
     border-radius: 20px;
-}
-.rowImg {
+} */
+/* .rowImg {
     content: "";
     clear: both;
     display: table;
-}
+} */
 img {
-    width: 500px;
+    max-width: 375px;
     text-align: center;
 }
-.signUp {
+/* .signUp {
     display: table;
-}
-.carousel-item {
-    border-radius: 15px;
-    align-items: center;
-    max-width: 75%;
-    max-height: 75%;
+} */
+
+  @media only screen and (max-width: 375px) {
+    .root {
+      width: 100%;
+    }
+    .image-blur {
+      width: 150px;
+      height: 100px;
+    }
+    .navBar ul {
+      font-size: 20px; 
+    }
   }
-  
-  .carousel-item .active{
-    border-radius: 15px;
-    align-items: center;
+  .popup-overlay {
+    background: rgba(0, 0, 0, 0.7);
   }
-  
-  .carousel {
-    margin: 30px 30px 30px 30px;
+  [data-popup='tooltip'].popup-overlay {
+    background: transparent;
   }

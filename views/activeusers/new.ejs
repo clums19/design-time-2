@@ -5,11 +5,17 @@
     <title>Create a New Post</title>
 </head>
 <body>
-    <header>
-        <%- include('../partials/nav.ejs') %> 
-    </header>
-    <h1>Create New Post</h1>
+    <div class="container">
+        <span>
+          <a href="/"><img class="image-blur" src="/css/imgs/logo.png" alt="logo"></a>
+        </span>
+        <header>
+          <%- include('../partials/nav') %> 
+        </header>
+      </div>
+    <span class="secondTitle">Create New Post</span>
     <main>
+      <div class="containerSign"> 
         <form class="addBlog" action="/activeusers" method="POST">
             * Name: <input type="text" name="name"/><br/>
             * Image: <input type="text" name="img"/><br/>
@@ -17,6 +23,7 @@
             <input type="submit" value="Create Post"/><br/>
         </form>
         <p>* = Required Field</p>
+      </div>
     </main>
 </body>
 </html>
