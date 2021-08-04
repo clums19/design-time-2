@@ -3,15 +3,20 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const userRouter = express.Router();
 const User = require('../models/user');
+const Blog = require('../models/activeuser');
+
 
 // // Index
 userRouter.get('/', (req, res) => {
     if(req.session.currentUser) {
         User.findOne(req.params.id, (error, oneUser) => {
-        res.render('users', {
-        user: oneUser,
-        currentUser: req.session.currentUser
+            Blog.find({}, (error, userBlogs) => {
+                res.render('users', {
+                    user: oneUser,
+                    blogs: userBlogs,
+                    currentUser: req.session.currentUser
         });
+      });
     });
     } else {res.render('sessions/new', {currentUser: req.session.currentUser});
     };
